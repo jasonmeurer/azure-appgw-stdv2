@@ -466,6 +466,7 @@
               "protocol": "Tcp",
               "frontendPort": 80,
               "backendPort": 80,
+              "enableFloatingIP": true,
               "idleTimeoutInMinutes": 15
             },
             "Name": "lbrule"
@@ -484,7 +485,7 @@
               "protocol": "All",
               "frontendPort": 0,
               "backendPort": 0,
-              "enableFloatingIP": false,
+              "enableFloatingIP": true,
                "loadDistribution": "Default",
               "idleTimeoutInMinutes": 15
             },

@@ -14,7 +14,7 @@ foreach ($_SERVER as $header => $value) {
     $clean_header = ucwords($clean_header, " \t\r\n\f\v-");
 
     /* And show'm */
-    echo '<strong>'. $clean_header .'</strong>: '. $value .'<br />';
+    echo '<strong>'. $header .'</strong>: '. $value .'<br />';
   }
 }
 ?>
