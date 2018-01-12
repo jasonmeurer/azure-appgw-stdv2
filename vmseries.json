@@ -275,7 +275,7 @@
             "value": "[concat(parameters('MgmtPublicIPAddressName'),copyindex())]"
           },
           "fwuntrustpip": {
-            "value": "[concat(fwuntrustpip,copyindex())]"
+            "value": "[concat('fwuntrustpip' ,copyindex())]"
           },
           "publicIPAddressType": {
             "value": "[variables('publicIPAddressType')]"
