@@ -130,7 +130,10 @@
       {
         "name": "[parameters('subnet1Name')]",
         "properties": {
-          "addressPrefix": "[parameters('subnet1Prefix')]"
+          "addressPrefix": "[parameters('subnet1Prefix')]",
+          "networkSecurityGroup": {
+              "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsgUntrust')]"
+          }
         }
       },
       {
