@@ -8,6 +8,9 @@
     "MgmtPublicIPAddressName": {
       "type": "string"
     },
+    "virtualNetworkName": {
+      "type": "string"
+    },
     "fwuntrustpip": {
       "type": "string"
     },
@@ -54,7 +57,7 @@
       "properties": {
         "publicIPAllocationMethod": "[parameters('publicIPAddressType')]",
         "dnsSettings": {
-          "domainNameLabel": "[parameters('fwuntrustpip')]"
+          "domainNameLabel": "[concat(parameters('virtualNetworkName'), parameters('fwuntrustpip'))]"
         }
       }
     }

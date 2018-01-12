@@ -271,6 +271,9 @@
           "location": {
             "value": "[variables('location')]"
           },
+          "virtualNetworkName": {
+            "value": "[parameters('virtualNetworkName')]"
+          },
           "MgmtPublicIPAddressName": {
             "value": "[concat(parameters('MgmtPublicIPAddressName'),copyindex())]"
           },
