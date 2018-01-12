@@ -26,6 +26,9 @@
     "MgmtPublicIPAddressName": {
       "type": "string"
     },
+    "fwuntrustpip": {
+      "type": "string"
+    },
     "baseUrl": {
       "type": "string"
     }
@@ -36,6 +39,7 @@
       "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet1Name'))]",
       "subnet2Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet2Name'))]",
       "mgmtpip": "[concat('mgmtIP-', parameters('MgmtPublicIPAddressName'))]",
+      "untpip": "[concat('untIP-', parameters('fwuntrustpip'))]",
       "setupUntrustNICURL": "[concat(parameters('baseUrl'),'/setupNICS-untrust.json')]"
   },
   "resources": [
@@ -87,9 +91,12 @@
           "virtualNetworkName": {
             "value": "[parameters('virtualNetworkName')]"
           },
+          "untpip": {
+            "value": "[variables('untpip')]"
+          },
           "virtualNetworkExistingRGName": {
             "value": "[parameters('virtualNetworkExistingRGName')]"
-          },
+          }
         }
       }
     },

@@ -8,6 +8,9 @@
     "MgmtPublicIPAddressName": {
       "type": "string"
     },
+    "fwuntrustpip": {
+      "type": "string"
+    },
     "publicIPAddressType": {
       "type": "string"
     },
@@ -19,7 +22,8 @@
      }
   },
   "variables": {
-    "mgmt": "[concat('mgmtIP-', parameters('MgmtPublicIPAddressName'))]"
+    "mgmt": "[concat('mgmtIP-', parameters('MgmtPublicIPAddressName'))]",
+    "untrust": "[concat('untIP-', parameters('fwuntrustpip'))]"
   },
   "resources": [
     {
@@ -37,6 +41,22 @@
           "domainNameLabel": "[parameters('MgmtPublicIPAddressName')]"
         }
       }
+    },
+    {
+      "apiVersion": "2017-08-01",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "name": "[variables('untrust')]",
+      "location": "[parameters('location')]",
+      "sku":
+            {
+                "name": "[parameters('StandardLoadBalancer')]"
+            },
+      "properties": {
+        "publicIPAllocationMethod": "[parameters('publicIPAddressType')]",
+        "dnsSettings": {
+          "domainNameLabel": "[parameters('UntPublicIPAddressName')]"
+        }
+      }
     }
   ],
   "outputs": {
@@ -44,8 +64,16 @@
       "value": "[resourceId(concat('Microsoft.Network','/','publicIPAddresses'),variables('mgmt'))]",
       "type": "string"
     },
+    "publicUntIpId": {
+      "value": "[resourceId(concat('Microsoft.Network','/','publicIPAddresses'),variables('untrust'))]",
+      "type": "string"
+    },
     "fqdn": {
       "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('mgmt')),providers('Microsoft.Network', 'publicIPAddresses').apiVersions[0]).dnsSettings.fqdn]",
+      "type": "string"
+    },
+    "fqdnUnt": {
+      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('untrust')),providers('Microsoft.Network', 'publicIPAddresses').apiVersions[0]).dnsSettings.fqdn]",
       "type": "string"
     }
   }

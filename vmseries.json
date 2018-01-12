@@ -138,13 +138,20 @@
       "metadata": {
         "artifactsBaseUrl": "",
         "description": "URL to acquire other VM-Series for Azure templates"
-      },
+      }
     },
     "MgmtPublicIPAddressName": {
       "type": "string",
       "defaultValue": "vm-servies-pib-mgmt",
       "metadata": {
         "description": "Name of public IP resource for mgmt interface"
+      }
+    },
+    "fwuntrustpip": {
+      "type": "string",
+      "defaultValue": "fwuntrustpub",
+      "metadata": {
+        "description": "Name of public IP resource for untrust interface"
       }
     },
     "storageAccountName": {
@@ -267,6 +274,9 @@
           "MgmtPublicIPAddressName": {
             "value": "[concat(parameters('MgmtPublicIPAddressName'),copyindex())]"
           },
+          "fwuntrustpip": {
+            "value": "[concat(fwuntrustpip,copyindex())]"
+          },
           "publicIPAddressType": {
             "value": "[variables('publicIPAddressType')]"
           },
@@ -320,6 +330,9 @@
           },
           "MgmtPublicIPAddressName": {
             "value": "[concat(parameters('MgmtPublicIPAddressName'), copyindex())]"
+          },
+          "fwuntrustpip": {
+            "value": "[concat(fwuntrustpip,copyindex())]"
           },
           "baseUrl": {
             "value": "[parameters('baseUrl')]"
@@ -388,7 +401,7 @@
           },
           "BootstrapUriSizeGB": {
             "value": "[parameters('BootstrapUriSizeGB')]"
-          },
+          }
         }
       }
     }
