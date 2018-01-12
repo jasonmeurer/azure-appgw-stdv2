@@ -54,7 +54,7 @@
       "properties": {
         "publicIPAllocationMethod": "[parameters('publicIPAddressType')]",
         "dnsSettings": {
-          "domainNameLabel": "[parameters('UntPublicIPAddressName')]"
+          "domainNameLabel": "[parameters('fwuntrustpip')]"
         }
       }
     }
