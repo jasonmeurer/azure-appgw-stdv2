@@ -132,7 +132,7 @@
         "properties": {
           "addressPrefix": "[parameters('subnet1Prefix')]",
           "networkSecurityGroup": {
-              "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsgUntrust')]"
+              "id": "[resourceId('Microsoft.Network/networkSecurityGroups', concat(parameters('virtualNetworkName'), '-untnsg'))]"
           }
         }
       },

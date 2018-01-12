@@ -299,6 +299,9 @@
           "location": {
             "value": "[variables('location')]"
           },
+          "virtualNetworkName": {
+            "value": "[parameters('virtualNetworkName')]"
+          },
           "nsgName": {
             "value": "[parameters('networkSecurityGroupName')]"
           },

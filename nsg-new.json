@@ -11,6 +11,9 @@
       "srcIPInboundNSG": {
         "type": "string"
       },
+      "virtualNetworkName": {
+        "type": "string"
+      },      
       "virtualNetworkAddressPrefix": {
         "type": "string"
       }
@@ -71,7 +74,7 @@
     {
         "apiVersion": "[variables('apiVersion')]",
         "type": "Microsoft.Network/networkSecurityGroups",
-        "name": "nsgUntrust",
+        "name": "[concat(parameters('virtualNetworkName'), '-untnsg')]",
         "location": "[parameters('location')]",
         "properties": {
             "securityRules": [{
