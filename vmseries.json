@@ -332,7 +332,7 @@
             "value": "[concat(parameters('MgmtPublicIPAddressName'), copyindex())]"
           },
           "fwuntrustpip": {
-            "value": "[concat(fwuntrustpip,copyindex())]"
+            "value": "[concat('fwuntrustpip', copyindex())]"
           },
           "baseUrl": {
             "value": "[parameters('baseUrl')]"
