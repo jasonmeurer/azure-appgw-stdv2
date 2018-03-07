@@ -32,13 +32,13 @@ This ARM template deploys two VM-Series firewalls between a pair of Azure load b
 
 [HA Ports](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-ha-ports-overview)
 
-Standard Preview is available in the following regions.
-* East US 2
-* Central US
-* North Europe
-* West Central US
-* West Europe
-* Southeast Asia
+Region availability
+Load Balancer Standard is currently available in all public cloud regions.
+
+Important
+
+For a short period of time, access to regions outside of the initial launch regions (East US 2, Central US, North Europe, West Central US, West Europe, Southeast Asia) requires the registration of additional subscription features (AllowLBPreviewWave2 and AllowLBPreviewWave3). Please follow these steps. Please execute all of them even if you have previously signed up for AllowLBPreview already. This requirement will be removed in the coming weeks.
+[Regional Enrollment](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-standard-overview#additionalpreviewregions)
 
 The iLB has two Front End configurations.  The first load balances the web servers.  The second utilizes the HA Port feature coupled with UDRs to send Web to DB and DB to Web traffic through the firewall.
 
