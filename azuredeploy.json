@@ -6,7 +6,7 @@
       "type": "string",
       "defaultValue": "Standard",
       "allowedValues": [
-                "Standard",
+                "Standard"
             ],
       "metadata": {
         "description": "Standard Preview of PubIP and ILB"
