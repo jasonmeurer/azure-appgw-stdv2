@@ -719,13 +719,6 @@
                   <service>any</service>
                 </entry>
                 <entry name="eastwest">
-                  <source-translation>
-                    <dynamic-ip-and-port>
-                      <interface-address>
-                        <interface>ethernet1/2</interface>
-                      </interface-address>
-                    </dynamic-ip-and-port>
-                  </source-translation>
                   <to>
                     <member>trust</member>
                   </to>
