@@ -589,7 +589,8 @@
                 "name": "[concat('eth2-', variables('nicName'), copyindex())]",
                 "location": "[resourceGroup().location]",
                 "properties": {
-                    "ipConfigurations": [
+                  "enableIPForwarding": true,  
+                  "ipConfigurations": [
                     {
                       "name": "ipconfig-trust",
                       "properties": {
