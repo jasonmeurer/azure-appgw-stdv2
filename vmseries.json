@@ -50,6 +50,22 @@
        },
        "defaultValue": "byol"
     },
+    "imageVersion": {
+      "type": "string",
+      "defaultValue": "latest",
+      "allowedValues": [
+         "9.1.0",
+         "9.0.4",
+         "9.0.1",
+         "8.1.9",
+         "8.1.0",
+         "8.0.17",
+         "7.1.1"
+      ],
+      "metadata": {
+          "description": "Firewall Version"
+      }
+   },     
     "virtualNetworkName": { 
       "type": "string",
       "metadata": {
@@ -372,6 +388,9 @@
           "imageSku": {
             "value": "[parameters('imageSku')]"
           },
+          "imageVersion": {
+            "value": "[parameters('imageVersion')]"
+          },          
           "imageOffer": {
             "value": "[variables('imageOffer')]"
           },

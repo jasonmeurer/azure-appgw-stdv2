@@ -180,6 +180,22 @@
            "description": "byol = Bring Your Own License; bundle1 = Bundle 1 PAYG (Hourly); bundle2 = Bundle 2 PAYG (Hourly)"
        }
     },
+    "firewallVersion": {
+      "type": "string",
+      "defaultValue": "latest",
+      "allowedValues": [
+         "9.1.0",
+         "9.0.4",
+         "9.0.1",
+         "8.1.9",
+         "8.1.0",
+         "8.0.17",
+         "7.1.1"
+      ],
+      "metadata": {
+          "description": "Firewall Version"
+      }
+   },    
     "firewallVmName": {
        "type": "string",
        "metadata": {
@@ -502,6 +518,9 @@
           },
           "imageSku": {
                "value": "[parameters('firewallModel')]"
+          },
+          "imageVersion": {
+            "value": "[parameters('firewallVersion')]"
           },
           "vmSize": {
                "value": "[parameters('firewallVmSize')]"
