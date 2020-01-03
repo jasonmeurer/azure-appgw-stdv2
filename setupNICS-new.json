@@ -47,7 +47,7 @@
       "name": "[concat('eth0-', parameters('nicName'))]",
       "type": "Microsoft.Network/networkInterfaces",
       "location": "[parameters('location')]",
-      "apiVersion": "2015-06-15",
+      "apiVersion": "2018-07-01",
       "properties": {
         "ipConfigurations": [
           {
@@ -104,7 +104,7 @@
       "name": "[concat('eth2-', parameters('nicName'))]",
       "type": "Microsoft.Network/networkInterfaces",
       "location": "[parameters('location')]",
-      "apiVersion": "2015-06-15",
+      "apiVersion": "2018-07-01",
       "dependsOn": [
         "[concat('SetupNetworkInterfaceUntrust-', parameters('nicName'))]"
       ],

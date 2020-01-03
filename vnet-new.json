@@ -173,7 +173,7 @@
       "name": "[variables('vnetname')]",
       "type": "Microsoft.Network/virtualNetworks",
       "location": "[variables('location')]",
-      "apiVersion": "2015-06-15",
+      "apiVersion": "2018-07-01",
       "dependsOn": [
         "[concat('rt',parameters('virtualNetworkName'))]"
       ],

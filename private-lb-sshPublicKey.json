@@ -372,7 +372,7 @@
         "count": "[variables('numberOfInstances')]"
       },
     "location": "[resourceGroup().location]",
-    "apiVersion": "2015-06-15",
+    "apiVersion": "2018-07-01",
     "dependsOn": ["virtualMachineLoop"],
     "tags": {
         "displayName": "scriptextensiondemo"
@@ -384,7 +384,7 @@
         "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": ["https://raw.githubusercontent.com/jasonmeurer/azure-appgw-stdv2/master/wpstage.sh"],
-          "commandToExecute": "[concat('sudo bash ./wpstage.sh ', reference(concat(variables('networkInterfaceName'), '-db0'),'2015-06-15').ipConfigurations[0].properties.privateIPAddress)]"
+          "commandToExecute": "[concat('sudo bash ./wpstage.sh ', reference(concat(variables('networkInterfaceName'), '-db0'),'2018-07-01').ipConfigurations[0].properties.privateIPAddress)]"
           }
         }
     },
@@ -392,7 +392,7 @@
     "name": "[concat(parameters('virtualNetworkName'),parameters('vmNamePrefix'), substring(uniqueString(resourceGroup().id), 0, 4), '-', copyindex(), 'db/installcustomscript')]",
     "type": "Microsoft.Compute/virtualMachines/extensions",
     "location": "[resourceGroup().location]",
-    "apiVersion": "2015-06-15",
+    "apiVersion": "2018-07-01",
     "dependsOn": [
       "dbvmLoop"
     ],
@@ -622,7 +622,7 @@
             "properties": {
                 "addressPrefix": "0.0.0.0/0",
                 "nextHopType": "VirtualAppliance",
-                "nextHopIpAddress": "[reference(resourceId('Microsoft.Network/loadBalancers',parameters('lbName')),'2015-06-15').frontendIPConfigurations[1].properties.privateIpAddress]"
+                "nextHopIpAddress": "[reference(resourceId('Microsoft.Network/loadBalancers',parameters('lbName')),'2018-07-01').frontendIPConfigurations[1].properties.privateIpAddress]"
             }
         },
         {
@@ -637,7 +637,7 @@
             "properties": {
                 "addressPrefix": "[parameters('subnetwwwPrefix')]",
                 "nextHopType": "VirtualAppliance",
-                "nextHopIpAddress": "[reference(resourceId('Microsoft.Network/loadBalancers',parameters('lbName')),'2015-06-15').frontendIPConfigurations[1].properties.privateIpAddress]"
+                "nextHopIpAddress": "[reference(resourceId('Microsoft.Network/loadBalancers',parameters('lbName')),'2018-07-01').frontendIPConfigurations[1].properties.privateIpAddress]"
             }
         },
         {
@@ -652,7 +652,7 @@
             "properties": {
                 "addressPrefix": "[parameters('subnetdbPrefix')]",
                 "nextHopType": "VirtualAppliance",
-                "nextHopIpAddress": "[reference(resourceId('Microsoft.Network/loadBalancers',parameters('lbName')),'2015-06-15').frontendIPConfigurations[1].properties.privateIpAddress]"
+                "nextHopIpAddress": "[reference(resourceId('Microsoft.Network/loadBalancers',parameters('lbName')),'2018-07-01').frontendIPConfigurations[1].properties.privateIpAddress]"
             }
         }
   ]

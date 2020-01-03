@@ -30,7 +30,7 @@
       "name": "[concat('eth1-', parameters('nicName'))]",
       "type": "Microsoft.Network/networkInterfaces",
       "location": "[parameters('location')]",
-      "apiVersion": "2015-06-15",
+      "apiVersion": "2018-07-01",
       "properties": {
         "enableIPForwarding": true,
         "ipConfigurations": [
