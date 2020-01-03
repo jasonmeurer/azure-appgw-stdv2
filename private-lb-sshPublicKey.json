@@ -260,7 +260,7 @@
           "computerName": "[concat(parameters('virtualNetworkName'),parameters('vmNamePrefix'), copyIndex())]",
           "adminUsername": "[parameters('adminUsername')]",
           "linuxConfiguration": {
-                  "disablePasswordAuthentication": "true",
+                  "disablePasswordAuthentication": true,
                   "ssh": {
                       "publicKeys": [
                           {
@@ -296,7 +296,7 @@
         },
         "diagnosticsProfile": {
           "bootDiagnostics": {
-             "enabled": "true",
+             "enabled": true,
              "storageUri": "[concat('http://',parameters('storageAccountName'),'.blob.core.windows.net')]"
           }
         }
@@ -322,7 +322,7 @@
           "computerName": "[concat(parameters('virtualNetworkName'),'db', copyIndex())]",
           "adminUsername": "[parameters('adminUsername')]",
           "linuxConfiguration": {
-                  "disablePasswordAuthentication": "true",
+                  "disablePasswordAuthentication": true,
                   "ssh": {
                       "publicKeys": [
                           {
@@ -358,7 +358,7 @@
         },
         "diagnosticsProfile": {
           "bootDiagnostics": {
-             "enabled": "true",
+             "enabled": true,
              "storageUri": "[concat('http://',parameters('storageAccountName'),'.blob.core.windows.net')]"
           }
         }
@@ -372,7 +372,7 @@
         "count": "[variables('numberOfInstances')]"
       },
     "location": "[resourceGroup().location]",
-    "apiVersion": "2018-07-01",
+    "apiVersion": "2018-10-01",
     "dependsOn": ["virtualMachineLoop"],
     "tags": {
         "displayName": "scriptextensiondemo"
@@ -392,7 +392,7 @@
     "name": "[concat(parameters('virtualNetworkName'),parameters('vmNamePrefix'), substring(uniqueString(resourceGroup().id), 0, 4), '-', copyindex(), 'db/installcustomscript')]",
     "type": "Microsoft.Compute/virtualMachines/extensions",
     "location": "[resourceGroup().location]",
-    "apiVersion": "2018-07-01",
+    "apiVersion": "2018-10-01",
     "dependsOn": [
       "dbvmLoop"
     ],
