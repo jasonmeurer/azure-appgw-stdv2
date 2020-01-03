@@ -190,7 +190,8 @@
          "8.1.9",
          "8.1.0",
          "8.0.17",
-         "7.1.1"
+         "7.1.1",
+         "latest"
       ],
       "metadata": {
           "description": "Firewall Version"
