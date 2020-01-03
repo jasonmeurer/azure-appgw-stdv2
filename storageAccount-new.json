@@ -22,7 +22,7 @@
         "Description": "The type of the Storage Account created"
       },
       "defaultValue": "Standard_LRS"
-    },
+    }
   },
   "variables": {
     "stname": "[parameters('storageAccountName')]"
